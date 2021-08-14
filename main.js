@@ -259,68 +259,54 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "Consignor, <b>Order Placed</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Request Received</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Order Placed";
+                                                finalstatus = "Request Received";
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('task via bulk'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "Arrived in Brunei International Airport, <b>Undergoing Custom Clearance</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Arrived in Go Rush Facility</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Undergoing Custom Clearance";
+                                                finalstatus = "Arrived in Go Rush Facility";
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "Arrived in Brunei International Airport, <b>Undergoing Custom Clearance</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Arrived in Go Rush Facility</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Undergoing Custom Clearance";
+                                                finalstatus = "Arrived in Go Rush Facility";
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
                                                 checkDate()
-    
-                                                if(countaccept < 1){
-    
-                                                    var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Arrived in Go Rush</b>" + "<br><br>";
-                                                    document.getElementById("trackinghistorydetails").appendChild(para);
-    
-                                                    countaccept = countaccept + 1;
-                                                    countassign = countassign + 1;
-                                                    countassigned = countassigned + 1;
-                                                    
-                                                    finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Arrived in Go Rush";
-                                                }
-    
+
                                                 if(countfacility < 1){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Go Rush Sorting Facility</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Scheduled for Delivery</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                     countfacility = countfacility + 1;
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Go Rush Sorting Facility";
+                                                    finalstatus = "Scheduled for Delivery";
                                                 }
                                             }
     
