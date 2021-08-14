@@ -296,6 +296,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
                                                 checkDate()
+                                                
+                                                if(countaccept < 1){
+
+                                                countaccept = countaccept + 1;
+                                                countassign = countassign + 1;
+                                                countassigned = countassigned + 1;
+
+                                            }
 
                                                 if(countfacility < 1){
     
