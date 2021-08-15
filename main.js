@@ -298,23 +298,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
                                                 
                                                 if(countaccept < 1){
+                                                    
+                                                var para = document.createElement("P" + i);
+                                                para.innerHTML = getTime() + " - " + "<b>Scheduled for Delivery</b>" + "<br><br>";
+                                                document.getElementById("trackinghistorydetails").appendChild(para);
 
                                                 countaccept = countaccept + 1;
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
+                                                    
+                                                finaldatewithtime = getFullDateWithDayandTime();
+                                                finalstatus = "Scheduled for Delivery";
 
                                             }
 
                                                 if(countfacility < 1){
     
-                                                    var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Scheduled for Delivery</b>" + "<br><br>";
-                                                    document.getElementById("trackinghistorydetails").appendChild(para);
-    
                                                     countfacility = countfacility + 1;
                                                     
-                                                    finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Scheduled for Delivery";
                                                 }
                                             }
     
