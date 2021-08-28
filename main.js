@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
                                                     var para = document.createElement("P" + i);
                                                     para.setAttribute("id", "faileddelivery2" + i);
-                                                    para.innerHTML = getTime() + " - " + "Go Rush Status Updated: <b>Failed</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Failed</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     document.getElementById("faileddelivery2" + i).style.color = "#b30000";
     
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Successful')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "Go Rush Status Updated: <b>Successful</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Successful</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
@@ -235,22 +235,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Unassigned')){
     
-                                                    var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "Go Rush Status Updated: <b>Unassigned</b>" + "<br><br>";
-                                                    document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
-                                                    finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Unassigned";
                                                 }
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Started')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "Go Rush Status Updated: <b>Started</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Started";
+                                                    finalstatus = "In Process";
                                                 }
                                             }
     
@@ -269,28 +264,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Arrived in Go Rush Facility</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Arrived in Go Rush Facility";
+                                                finalstatus = "In Process";
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Arrived in Go Rush Facility</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Arrived in Go Rush Facility";
+                                                finalstatus = "In Process";
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
@@ -298,16 +293,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 
                                                 if(countaccept < 1){
                                                     
-                                                var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Scheduled for Delivery</b>" + "<br><br>";
-                                                document.getElementById("trackinghistorydetails").appendChild(para);
 
                                                 countaccept = countaccept + 1;
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                     
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Scheduled for Delivery";
 
                                             }
 
@@ -335,13 +326,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " -  " + "<b>Arrived</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " -  " + "<b>In Process</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countfacility = 0;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Arrived";
+                                                finalstatus = "In Process";
                                             }
                                             
                                             if(json_responsejd.data[0].task_history[i].type.includes('signature_image_added')){
@@ -370,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
                                                 var para = document.createElement("P" + i);
                                                 para.setAttribute("id", "faileddelivery" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Failed Delivery</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Failed</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
                                                 document.getElementById("faileddelivery" + i).style.color = "#b30000";
     
@@ -379,7 +370,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Failed Delivery";
+                                                finalstatus = "Failed";
                                             }
                                         }
        
