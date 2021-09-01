@@ -297,8 +297,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 countaccept = countaccept + 1;
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
-                                                    
-                                                finaldatewithtime = getFullDateWithDayandTime();
 
                                             }
 
