@@ -246,51 +246,35 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Started')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Out For Delivery</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Processing";
+                                                    finalstatus = "Out For Delivery";
                                                 }
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Created By')){
                                                 checkDate()
-    
-                                                var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
-                                                document.getElementById("trackinghistorydetails").appendChild(para);
-                                                
-                                                finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Processing";
+
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('task via bulk'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
-                                                var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
-                                                document.getElementById("trackinghistorydetails").appendChild(para);
-    
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
-                                                finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Processing";
+
+  
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
-                                                var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
-                                                document.getElementById("trackinghistorydetails").appendChild(para);
-    
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
-                                                finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Processing";
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
@@ -298,7 +282,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 
                                                 if(countaccept < 1){
                                                     
-
                                                 countaccept = countaccept + 1;
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
@@ -328,14 +311,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             if(json_responsejd.data[0].task_history[i].description.includes('Arrived at')){
                                                 checkDate()
     
-                                                var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " -  " + "<b>Processing</b>" + "<br><br>";
-                                                document.getElementById("trackinghistorydetails").appendChild(para);
-    
                                                 countfacility = 0;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Processing";
+
                                             }
                                             
                                             if(json_responsejd.data[0].task_history[i].type.includes('signature_image_added')){
