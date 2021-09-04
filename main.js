@@ -236,11 +236,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Unassigned')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "In Process";
+                                                    finalstatus = "Processing";
                                                 }
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Started')){
@@ -251,11 +251,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
                                                 
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "In Process";
+                                                finalstatus = "Processing";
 
                                             }
     
