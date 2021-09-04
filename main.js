@@ -253,11 +253,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>Request Received</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "Request Received";
+                                                finalstatus = "Processing";
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('task via bulk'))&&(countassign < 1)&&(countassigned < 1)){
