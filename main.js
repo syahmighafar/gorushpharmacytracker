@@ -235,17 +235,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Unassigned')){
     
+                                                    var para = document.createElement("P" + i);
+                                                    para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
+                                                    document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
+                                                    finaldatewithtime = getFullDateWithDayandTime();
+                                                    finalstatus = "Processing";
                                                 }
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Started')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "In Process";
+                                                    finalstatus = "Processing";
                                                 }
                                             }
     
@@ -264,28 +269,28 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "In Process";
+                                                finalstatus = "Processing";
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "In Process";
+                                                finalstatus = "Processing";
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
@@ -324,13 +329,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 checkDate()
     
                                                 var para = document.createElement("P" + i);
-                                                para.innerHTML = getTime() + " -  " + "<b>In Process</b>" + "<br><br>";
+                                                para.innerHTML = getTime() + " -  " + "<b>Processing</b>" + "<br><br>";
                                                 document.getElementById("trackinghistorydetails").appendChild(para);
     
                                                 countfacility = 0;
                                                 
                                                 finaldatewithtime = getFullDateWithDayandTime();
-                                                finalstatus = "In Process";
+                                                finalstatus = "Processing";
                                             }
                                             
                                             if(json_responsejd.data[0].task_history[i].type.includes('signature_image_added')){
