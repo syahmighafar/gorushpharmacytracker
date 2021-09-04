@@ -236,26 +236,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Unassigned')){
     
                                                     var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Processing</b>" + "<br><br>";
+                                                    para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
                                                     document.getElementById("trackinghistorydetails").appendChild(para);
                                                     
                                                     finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Processing";
+                                                    finalstatus = "In Process";
                                                 }
     
                                                 if(json_responsejd.data[0].task_history[i].description.includes('to Started')){
-    
-                                                    var para = document.createElement("P" + i);
-                                                    para.innerHTML = getTime() + " - " + "<b>Out For Delivery</b>" + "<br><br>";
-                                                    document.getElementById("trackinghistorydetails").appendChild(para);
-                                                    
-                                                    finaldatewithtime = getFullDateWithDayandTime();
-                                                    finalstatus = "Out For Delivery";
                                                 }
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Created By')){
                                                 checkDate()
+                                                
+                                                var para = document.createElement("P" + i);
+                                                para.innerHTML = getTime() + " - " + "<b>In Process</b>" + "<br><br>";
+                                                document.getElementById("trackinghistorydetails").appendChild(para);
+                                                    
+                                                finaldatewithtime = getFullDateWithDayandTime();
+                                                finalstatus = "In Process";
 
                                             }
     
@@ -265,8 +265,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
                                                 
-
-  
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
@@ -289,9 +287,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             }
 
                                                 if(countfacility < 1){
-    
                                                     countfacility = countfacility + 1;
-                                                    
                                                 }
                                             }
     
