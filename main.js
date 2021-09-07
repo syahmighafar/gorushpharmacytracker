@@ -260,7 +260,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('task via bulk'))&&(countassign < 1)&&(countassigned < 1)){
-                                                checkDate()
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
@@ -268,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             }
     
                                             if((json_responsejd.data[0].task_history[i].description.includes('Assigned'))&&(countassign < 1)&&(countassigned < 1)){
-                                                checkDate()
     
                                                 countassign = countassign + 1;
                                                 countassigned = countassigned + 1;
@@ -276,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Accepted at')){
-                                                checkDate()
                                                 
                                                 if(countaccept < 1){
                                                     
@@ -305,7 +302,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
                                             }
     
                                             if(json_responsejd.data[0].task_history[i].description.includes('Arrived at')){
-                                                checkDate()
     
                                                 countfacility = 0;
                                                 
